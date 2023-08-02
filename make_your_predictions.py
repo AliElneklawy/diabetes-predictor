@@ -51,10 +51,10 @@ def get_input():
 
     user_inputs = {}
     user_inputs['Pregnancies'] = float(input("Number of Pregnancies: "))
-    user_inputs['Glucose'] = float(input("Glucose level: "))
-    user_inputs['BloodPressure'] = float(input("Diastolic blood pressure: "))
-    user_inputs['SkinThickness'] = float(input("Skin thickness: "))
-    user_inputs['Insulin'] = float(input("Insulin level: "))
+    user_inputs['Glucose'] = float(input("Plasma glucose concentration a 2 hours in an oral glucose tolerance tesف: "))
+    user_inputs['BloodPressure'] = float(input("Diastolic blood pressure (mm Hg): "))
+    user_inputs['SkinThickness'] = float(input("Triceps skin fold thickness (mm): "))
+    user_inputs['Insulin'] = float(input("2-Hour serum insulin (mu U/ml): "))
     user_inputs['BMI'] = float(input("BMI: "))
     user_inputs['DiabetesPedigreeFunction'] = float(input('Diabetes pedigree function: '))
     user_inputs['Age'] = float(input("Age: "))
