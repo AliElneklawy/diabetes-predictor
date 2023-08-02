@@ -52,7 +52,7 @@ def get_input():
     user_inputs = {}
     user_inputs['Pregnancies'] = float(input("Number of Pregnancies: "))
     user_inputs['Glucose'] = float(input("Glucose level: "))
-    user_inputs['BloodPressure'] = float(input("Blood pressure: "))
+    user_inputs['BloodPressure'] = float(input("Diastolic blood pressure: "))
     user_inputs['SkinThickness'] = float(input("Skin thickness: "))
     user_inputs['Insulin'] = float(input("Insulin level: "))
     user_inputs['BMI'] = float(input("BMI: "))
