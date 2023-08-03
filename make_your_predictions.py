@@ -77,8 +77,3 @@ preprocessing = ColumnTransformer([
     ('log_transform', log_pl, ['bmi']),
     ('cat_pipeline', cat_pl, make_column_selector(dtype_include=['category', 'object']))
 ])
-
-
-
-
-    
