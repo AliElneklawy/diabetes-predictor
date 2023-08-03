@@ -1,4 +1,4 @@
-# diabetes-predictor
+# Diabetes Predictor
 A binary classification model that can be used to predict wheter a patient is diabetic or not based on the following factors:
 - Gender: it can have an impact on patients' susceptibility to diabetes.
 - Age: it is an important factor as diabetes is more commonly diagnosed in older adults. Age ranges from 0-80 in our dataset.
