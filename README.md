@@ -11,9 +11,13 @@ A binary classification model that can be used to predict wheter a patient is di
   developing diabetes. Mostly more than 6.5% of HbA1c Level indicates diabetes.
 - Blood glucose level: refers to the amount of glucose in the bloodstream at a given time. High blood glucose levels are a key indicator of diabetes.
 
-The model has:
+The gradient boosting model has:
 - Accuracy: 0.97
 - Precision: 0.98
 - Recall: 0.69
 - F1-score: 0.82
 - ROC AUC: 0.85
+
+The neural network has:
+- Precision: 0.85
+- Recall: 0.72
