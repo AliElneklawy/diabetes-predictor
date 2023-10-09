@@ -43,7 +43,7 @@ def feat_eng(df):
     return df
 
 
-reloaded_model = joblib.load("/home/elneklawy/Desktop/diabetes prediction (better data set)/final_model.pkl")
+reloaded_model = joblib.load("final_model.pkl")
 input = get_input()
 numerical_columns_except_bmi = list(make_column_selector(dtype_include=np.number)(input))
 numerical_columns_except_bmi.remove('bmi')
