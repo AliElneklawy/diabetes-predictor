@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - Diabetes Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container result-container">
+        <h1>Prediction Result</h1>
+        
+        <div class="prediction-box {% if prediction == 1 %}prediction-positive{% else %}prediction-negative{% endif %}">
+            <h2>
+                {% if prediction == 1 %}
+                    Diabetes Risk Detected
+                {% else %}
+                    No Diabetes Risk Detected
+                {% endif %}
+            </h2>
+            <p class="probability">Probability: {{ probability }}%</p>
+        </div>
+
+        <div class="categories-box">
+            <h3>Health Categories:</h3>
+            <ul>
+                <li>Age Category: <span>{{ categories['AgeCat'] }}</span></li>
+                <li>BMI Category: <span>{{ categories['BMICat'] }}</span></li>
+                <li>Glucose Category: <span>{{ categories['GlucoseCat'] }}</span></li>
+                <li>HbA1c Category: <span>{{ categories['HbA1cCat'] }}</span></li>
+            </ul>
+        </div>
+
+        <div class="actions">
+            <a href="{{ url_for('home') }}" class="button">Make Another Prediction</a>
+        </div>
+    </div>
+</body>
+</html>

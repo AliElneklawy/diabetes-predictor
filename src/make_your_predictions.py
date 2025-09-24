@@ -3,8 +3,12 @@ import numpy as np
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, FunctionTransformer
-from sklearn.compose import make_column_transformer, make_column_selector, ColumnTransformer
+from sklearn.compose import make_column_selector, ColumnTransformer
 import joblib
+from pathlib import Path
+
+
+MODEL_PATH = Path(__file__).parent.parent / "models" / "final_model.pkl"
 
 
 def get_input():
@@ -43,7 +47,7 @@ def feat_eng(df):
     return df
 
 
-reloaded_model = joblib.load("final_model.pkl")
+reloaded_model = joblib.load(MODEL_PATH)
 input = get_input()
 numerical_columns_except_bmi = list(make_column_selector(dtype_include=np.number)(input))
 numerical_columns_except_bmi.remove('bmi')

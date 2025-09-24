@@ -1,23 +1,104 @@
 # Diabetes Predictor
-A binary classification model that can be used to predict wheter a patient is diabetic or not based on the following factors:
-- Gender: it can have an impact on patients' susceptibility to diabetes.
-- Age: it is an important factor as diabetes is more commonly diagnosed in older adults. Age ranges from 0-80 in our dataset.
-- Hypertension: it is a medical condition in which the blood pressure in the arteries is persistently elevated.
-- Heart disease: another medical condition that is associated with an increased risk of developing diabetes.
-- Smoking history: it is also considered a risk factor for diabetes and can exacerbate the complications associated with diabetes.
-- BMI: Body Mass Index is a measure of body fat based on weight and height. Higher BMI values are linked to a higher risk of diabetes.
-  The range of BMI in the dataset is from 10.16 to 71.55.
-- HbA1c level: a measure of a person's average blood sugar level over the past 2-3 months. Higher levels indicate a greater risk of
-  developing diabetes. Mostly more than 6.5% of HbA1c Level indicates diabetes.
-- Blood glucose level: refers to the amount of glucose in the bloodstream at a given time. High blood glucose levels are a key indicator of diabetes.
 
-The gradient boosting model has:
+A web application for predicting diabetes risk based on various health factors.
+
+## Project Structure
+
+```
+diabetes-predictor/
+├── data/                    # Data files
+│   ├── diabetes.csv        # Main dataset
+│   └── test.png           # Test image
+├── models/                 # Trained models
+│   ├── final_model.pkl    # Gradient boosting model
+│   └── neural_network/    # Neural network model files
+├── notebooks/             # Jupyter notebooks
+│   ├── diabetes_prediction.ipynb      # Traditional ML approach
+│   └── diabetes_prediction_nn.ipynb   # Neural network approach
+└── src/                   # Source code
+    ├── app.py            # Flask web application
+    ├── make_your_predictions.py      # Command-line prediction script
+    ├── static/           # Static assets
+    │   └── css/         # CSS styles
+    └── templates/       # HTML templates
+```
+
+## Features Used for Prediction
+
+- Gender: Impact on diabetes susceptibility
+- Age: Range 0-80 years
+- Hypertension: Blood pressure condition
+- Heart disease: Associated medical condition
+- Smoking history: Risk factor
+- BMI: Body Mass Index (range 10.16-71.55)
+- HbA1c level: Average blood sugar level (past 2-3 months)
+- Blood glucose level: Current blood glucose measurement
+
+## Model Performance
+
+### Gradient Boosting Model
 - Accuracy: 0.97
 - Precision: 0.98
 - Recall: 0.69
 - F1-score: 0.82
 - ROC AUC: 0.85
 
-The neural network has:
+### Neural Network
 - Precision: 0.85
 - Recall: 0.72
+
+## Setup and Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AliElneklawy/diabetes-predictor.git
+   cd diabetes-predictor
+   ```
+
+2. Create a virtual environment and activate it:
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\activate  # Windows
+   source venv/bin/activate # Linux/Mac
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+### Web Application
+1. Start the Flask application:
+   ```bash
+   cd src
+   python app.py
+   ```
+2. Open your web browser and navigate to `http://localhost:5000`
+3. Fill in the patient's health information in the form
+4. Click "Predict" to see the diabetes risk assessment
+
+### Command Line Interface
+You can also use the command-line interface:
+```bash
+python src/make_your_predictions.py
+```
+
+### Development
+- The notebooks in the `notebooks/` directory contain the model development process
+- Trained models are saved in the `models/` directory
+- Source code is organized in the `src/` directory
+
+## Data
+
+The dataset is located in `data/diabetes.csv` and contains various health metrics used for prediction. The model takes into account:
+
+- Gender
+- Age
+- Hypertension status
+- Heart disease history
+- Smoking history
+- BMI (Body Mass Index)
+- HbA1c level
+- Blood glucose level
