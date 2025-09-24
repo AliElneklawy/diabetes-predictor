@@ -77,7 +77,7 @@ diabetes-predictor/
 
 2. Run the container:
    ```bash
-   docker run -d -p 5000:5000 diabetes-predictor:latest
+   docker run -d -p 5000:80 diabetes-predictor:latest
    ```
 
 The application will be available at `http://localhost:5000`
