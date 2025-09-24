@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction Tool</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select name="gender" id="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" name="age" id="age" step="0.1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hypertension">Hypertension:</label>
+                <select name="hypertension" id="hypertension" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="heart_disease">Heart Disease:</label>
+                <select name="heart_disease" id="heart_disease" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="smoking_history">Smoking History:</label>
+                <select name="smoking_history" id="smoking_history" required>
+                    <option value="never">Never</option>
+                    <option value="no_info">No Information</option>
+                    <option value="current">Current</option>
+                    <option value="former">Former</option>
+                    <option value="ever">Ever</option>
+                    <option value="not_current">Not Current</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bmi">BMI:</label>
+                <input type="number" name="bmi" id="bmi" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="HbA1c_level">HbA1c Level:</label>
+                <input type="number" name="HbA1c_level" id="HbA1c_level" step="0.1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="blood_glucose_level">Blood Glucose Level:</label>
+                <input type="number" name="blood_glucose_level" id="blood_glucose_level" step="0.1" required>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
