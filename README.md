@@ -49,23 +49,38 @@ diabetes-predictor/
 
 ## Setup and Installation
 
+### Local Installation with uv
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/AliElneklawy/diabetes-predictor.git
    cd diabetes-predictor
    ```
 
-2. Create a virtual environment and activate it:
+2. Install uv if you haven't already:
    ```bash
-   python -m venv venv
-   .\venv\Scripts\activate  # Windows
-   source venv/bin/activate # Linux/Mac
+   curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
 
-3. Install dependencies:
+3. Create a virtual environment and install dependencies:
    ```bash
-   pip install -r requirements.txt
+   uv venv
+   uv pip install .
    ```
+
+### Using Docker
+
+1. Build the Docker image:
+   ```bash
+   docker build -t diabetes-predictor .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -p 5000:80 diabetes-predictor:latest
+   ```
+
+The application will be available at `http://localhost:5000`
 
 ## Usage
 
@@ -73,7 +88,7 @@ diabetes-predictor/
 1. Start the Flask application:
    ```bash
    cd src
-   python app.py
+   uv run app.py
    ```
 2. Open your web browser and navigate to `http://localhost:5000`
 3. Fill in the patient's health information in the form
@@ -82,7 +97,7 @@ diabetes-predictor/
 ### Command Line Interface
 You can also use the command-line interface:
 ```bash
-python src/make_your_predictions.py
+uv run src/make_your_predictions.py
 ```
 
 ### Development
