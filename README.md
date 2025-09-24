@@ -84,7 +84,7 @@ The application will be available at `http://localhost:5000`
 
 Or you can just pull the container and run it:
 ```bash
-docker pull alielneklawy/diabetes-predictor:v1
+docker pull alielneklawy/diabetes-predictor:latest
 ```
 
 
