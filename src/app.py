@@ -6,7 +6,6 @@ from pathlib import Path
 
 app = Flask(__name__)
 
-# Load the model
 MODEL_PATH = Path(__file__).parent.parent / "models" / "final_model.pkl"
 model = joblib.load(MODEL_PATH)
 
@@ -36,7 +35,6 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        # Get data from form
         data = {
             'gender': request.form['gender'],
             'age': float(request.form['age']),
@@ -48,15 +46,12 @@ def predict():
             'blood_glucose_level': float(request.form['blood_glucose_level'])
         }
         
-        # Create DataFrame and apply feature engineering
         df = pd.DataFrame([data])
         df = feat_eng(df)
         
-        # Make prediction
         probability = model.predict_proba(df)[0][1]
         prediction = model.predict(df)[0]
         
-        # Get feature categories for display
         categories = df.loc[:, 'AgeCat':'HbA1cCat'].iloc[0].to_dict()
         
         return render_template(
@@ -70,4 +65,4 @@ def predict():
         return render_template('error.html', error=str(e))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=80)
