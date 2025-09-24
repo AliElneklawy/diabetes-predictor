@@ -1,7 +1,7 @@
 [project]
 name = "diabetes-predictor"
 version = "0.1.0"
-description = "Add your description here"
+description = "A web application for predicting diabetes risk based on various health factors."
 readme = "README.md"
 requires-python = "==3.9.21"
 dependencies = [
